@@ -1,4 +1,4 @@
-# Express Uptimer#
+# Express Uptimer
 
 Simple password protected uptimer to check the status of your websites and to keep them alive.
 
