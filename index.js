@@ -11,7 +11,7 @@ const {
 
 require("dotenv").config();
 
-const PING_INTERVAL_MINUTES = process.env.PING_INTERVAL_MINUTES || 2;
+const PING_INTERVAL_MINUTES = parseInt(process.env.PING_INTERVAL_MINUTES) || 2;
 
 const app = express();
 
@@ -60,9 +60,9 @@ app.post("/db/add", (req, res) => {
 
 setInterval(() => {
   updateURLStatus();
-}, 0.2 * 60 * 1000);
+}, PING_INTERVAL_MINUTES * 60 * 1000);
 
-const PORT = process.env.PORT;
+const PORT = parseInt(process.env.PORT);
 
 app.listen(PORT, () => {
   console.log("Running on port " + PORT);
